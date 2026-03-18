@@ -256,7 +256,7 @@ const episodios = [
     autor: "Inês Pereira - 9ºA",
     data: "Março 2026",
     duracao: "02:10 minutos",
-    descricao: "Neste episódio do podcast €u Falo de Dinheiro, a Inês descomplica a diferença entre ações e obrigações, dois conceitos fundamentais no mundo dos investimentos. Explica que comprar ações é como comprar um pedacinho de uma empresa, tornando-te sócio e correndo mais risco, mas com potencial de maior retorno. Já as obrigações funcionam como um empréstimo à empresa, onde és credor e recebes juros fixos, sendo geralmente consideradas mais seguras. A aluna usa exemplos práticos, como comprar ações ou obrigações do Benfica, e termina com a dica de ouro da diversificação: não colocar todos os ovos no mesmo cesto.",
+    descricao: "Neste episódio do podcast €u Falo de Dinheiro, a Inês descomplica a diferença entre ações e obrigações, dois conceitos fundamentais no mundo dos investimentos. Explica que comprar ações é como comprar um pedacinho de uma empresa, tornando-te sócio e correndo mais risco, mas com potencial de maior retorno. Já as obrigações funcionam como um empréstimo à empresa, onde és credor e recebes juros fixos, sendo geralmente consideradas mais seguras. A Inês usa exemplos práticos, como comprar ações ou obrigações do Benfica, e termina com a dica de ouro da diversificação: não colocar todos os ovos no mesmo cesto.",
     imagem: "images/img_6.jpg",
     audio: "https://pub-c876b1902a0a426d9d354f25c6e000fa.r2.dev/episodio_6.mp3",
     topicos: [
