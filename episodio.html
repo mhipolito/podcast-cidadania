@@ -228,20 +228,36 @@
         }
 
         // Relacionados
-        const relatedContainer = document.getElementById('related-episodes');
-        const relacionados = episodios.filter(e => e.id !== id).slice(0, 3);
-        relatedContainer.innerHTML = relacionados.map(rel => `
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="podcast-related bg-white">
-                    <div class="image" style="background-image: url('${rel.imagem || 'images/img_1.jpg'}');"></div>
-                    <div class="text p-4">
-                        <h5><a href="episodio.html?id=${rel.id}" class="text-dark">${rel.titulo}</a></h5>
-                        <small class="text-black-opacity-05">Por ${rel.autor} • ${rel.data}</small>
-                        <p class="mt-2 small">${(rel.descricao || '').substring(0, 130)}...</p>
-                    </div>
-                </div>
+        // ========== EPISÓDIOS RELACIONADOS (ALEATÓRIOS) ==========
+function getRandomRelated(currentId, count = 3) {
+    // Criar array com todos os episódios exceto o atual
+    const outros = episodios.filter(ep => ep.id !== currentId);
+    
+    // Embaralhar (algoritmo Fisher-Yates)
+    for (let i = outros.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [outros[i], outros[j]] = [outros[j], outros[i]];
+    }
+    
+    // Retornar os primeiros 'count' (ou menos se não houver suficientes)
+    return outros.slice(0, count);
+}
+
+const relacionados = getRandomRelated(id, 3);
+
+const relatedContainer = document.getElementById('related-episodes');
+relatedContainer.innerHTML = relacionados.map(rel => `
+    <div class="col-md-6 col-lg-4 mb-5">
+        <div class="podcast-related bg-white">
+            <div class="image" style="background-image: url('${rel.imagem || 'images/img_1.jpg'}');"></div>
+            <div class="text p-4">
+                <h5><a href="episodio.html?id=${rel.id}" class="text-dark">${rel.titulo}</a></h5>
+                <small class="text-black-opacity-05">Por ${rel.autor} • ${rel.data}</small>
+                <p class="mt-2 small">${(rel.descricao || '').substring(0, 130)}...</p>
             </div>
-        `).join('');
+        </div>
+    </div>
+`).join('');
 
     });
   </script>
