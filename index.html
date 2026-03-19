@@ -213,7 +213,7 @@
       const email = input.value.trim();
 
       if (!email || !/\S+@\S+\.\S+/.test(email)) {
-        document.getElementById(messageId).innerHTML = '<span style="color: #ffc107;">Por favor, insira um email válido.</span>';
+        document.getElementById(messageId).innerHTML = '<span style="color: #ffffff;">Por favor, insira um email válido.</span>';
         return;
       }
 
@@ -242,7 +242,7 @@
         try { result = await response.json(); } catch {}
 
         if (response.ok) {
-          document.getElementById(messageId).innerHTML = '<span style="color: #28a745;">Obrigado pela subscrição!</span>';
+          document.getElementById(messageId).innerHTML = '<span style="color: #ffffff;">Obrigado pela subscrição!</span>';
           const input = document.getElementById(emailId);
           if (input) input.value = '';
         } else {
