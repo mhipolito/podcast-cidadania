@@ -332,33 +332,37 @@
   }
 
   // Função que envia o email e o token para a API
-  async function submitEmail(formData, token) {
-    const { email, messageId, emailId } = formData;
+ async function submitEmail(formData, token) {
+  const { email, messageId, emailId } = formData;
 
+  try {
+    const response = await fetch('/api/subscribe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, token })
+    });
+
+    let result;
     try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, token })
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        document.getElementById(messageId).innerHTML = '<span style="color: #28a745;">Obrigado pela subscrição!</span>';
-        // Limpar campo de email
-        const input = document.getElementById(emailId);
-        if (input) input.value = '';
-      } else {
-        document.getElementById(messageId).innerHTML = `<span style="color: #dc3545;">Erro: ${result.error || 'Tente novamente mais tarde.'}</span>`;
-      }
-    } catch (err) {
-      console.error('Erro no fetch:', err);
-      document.getElementById(messageId).innerHTML = '<span style="color: #dc3545;">Erro de ligação. Tente novamente.</span>';
-    } finally {
-      window._currentForm = null;
+      result = await response.json();
+    } catch {
+      result = { error: 'Resposta inválida do servidor' };
     }
+
+    if (response.ok) {
+      document.getElementById(messageId).innerHTML = '<span style="color: #28a745;">Obrigado pela subscrição!</span>';
+      const input = document.getElementById(emailId);
+      if (input) input.value = '';
+    } else {
+      document.getElementById(messageId).innerHTML = `<span style="color: #dc3545;">Erro: ${result.error || 'Tente novamente mais tarde.'}</span>`;
+    }
+  } catch (err) {
+    console.error('Erro no fetch:', err);
+    document.getElementById(messageId).innerHTML = '<span style="color: #dc3545;">Erro de ligação. Tente novamente.</span>';
+  } finally {
+    window._currentForm = null;
   }
+}
 
   // Associar eventos quando a página carregar
   document.addEventListener('DOMContentLoaded', function() {
