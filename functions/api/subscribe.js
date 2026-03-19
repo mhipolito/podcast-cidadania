@@ -17,6 +17,13 @@ export async function onRequest(context) {
     }
 
     const secret = env.TURNSTILE_SECRET_KEY;
+    if (!secret) {
+      return new Response(JSON.stringify({ error: 'TURNSTILE_SECRET_KEY não configurada no dashboard' }), { 
+        status: 500, 
+        headers: { 'Content-Type': 'application/json' } 
+      });
+    }
+
     const turnstileResult = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -24,8 +31,13 @@ export async function onRequest(context) {
     });
     const turnstileData = await turnstileResult.json();
 
+    console.log('Turnstile debug:', turnstileData); // ← aparece nos logs do dashboard
+
     if (!turnstileData.success) {
-      return new Response(JSON.stringify({ error: 'Falha na verificação de segurança' }), { 
+      return new Response(JSON.stringify({ 
+        error: 'Falha na verificação Turnstile', 
+        details: turnstileData['error-codes'] || ['unknown'] 
+      }), { 
         status: 400, 
         headers: { 'Content-Type': 'application/json' } 
       });
@@ -37,6 +49,7 @@ export async function onRequest(context) {
       headers: { 'Content-Type': 'application/json' } 
     });
   } catch (err) {
+    console.error('Erro subscribe:', err);
     return new Response(JSON.stringify({ error: err.message }), { 
       status: 500, 
       headers: { 'Content-Type': 'application/json' } 

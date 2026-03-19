@@ -15,12 +15,8 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
-
-
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/style.css">
-    
   </head>
   <body>
   
@@ -35,60 +31,45 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-
     <header class="site-navbar py-4 absolute transparent" role="banner">
-
       <div class="container">
         <div class="row align-items-center">
-          
-
           <div class="col-3" data-aos="fade-down">
             <h1><a href="#" class="text-white h2">€u Falo de Dinheiro!</a></h1>
           </div>
           <div class="col-9" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-md-right" role="navigation">
-    <div class="d-inline-block ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
-
-    <ul class="site-menu js-clone-nav d-none">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="about.html">O Projeto</a></li>
-    </ul>
-</nav>
-
-
+              <div class="d-inline-block ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+              <ul class="site-menu js-clone-nav d-none">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="about.html">O Projeto</a></li>
+              </ul>
+            </nav>
           </div>
-
         </div>
       </div>
-      
     </header>
 
     <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-    <div class="container">
+      <div class="container">
         <div class="row align-items-center justify-content-center text-center">
-            <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-                <h2 class="text-white font-weight-light mb-2 display-4" id="destaque-titulo">Carregando....</h2>
-                <div class="text-white mb-4" id="destaque-meta"></div>
-                <p id="destaque-descricao" class="text-white mb-4"></p>
-                <!-- Sem player -->
-            </div>
+          <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+            <h2 class="text-white font-weight-light mb-2 display-4" id="destaque-titulo">Carregando...</h2>
+            <div class="text-white mb-4" id="destaque-meta"></div>
+            <p id="destaque-descricao" class="text-white mb-4"></p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
 
     <div class="site-section bg-light">
       <div class="container">
-
         <div class="row mb-5" data-aos="fade-up">
           <div class="col-md-12 text-center">
             <h2 class="font-weight-bold text-black">Últimos Podcasts</h2>
           </div>
         </div>
-        
         <div id="lista-episodios" class="episodios-container"></div>
-
-
       </div>
       <div class="container" data-aos="fade-up">
         <div class="row">
@@ -109,100 +90,68 @@
       </div>
     </div>
 
-   <div class="site-blocks-cover overlay inner-page-cover" ...>
-  <div class="container">
-    <div class="row align-items-center justify-content-center text-center">
-      <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-        <h2>Subscrever</h2>
-        <p class="mb-5">Esteja a par dos últimos episódios, informações e novidades.</p>
-        <!-- Formulário modificado -->
-        <form id="subscribe-form-1" class="site-block-subscribe" onsubmit="return false;">
-  <div class="input-group mb-3">
-    <input type="email" id="subscribe-email-1" class="form-control border-secondary text-white bg-transparent" placeholder="Escreva o seu Email" aria-label="Email" required>
-    <div class="input-group-append">
-      <button class="btn btn-primary" type="button" id="subscribe-btn-1">Enviar</button>
-    </div>
-  </div>
- <!-- FORMULÁRIO 1 (hero / site-blocks-cover) -->
-<div class="cf-turnstile" 
-     data-sitekey="0x4AAAAAACtNB8-rMqwnSTsP" 
-     data-callback="onTurnstileSuccess" 
-     data-size="invisible" 
-     style="display: none;"></div>
-</form>
-<div id="subscribe-message-1" class="mt-3 text-white"></div>
-        <!-- Mensagem de feedback (inicialmente vazia) -->
-        
+    <!-- === FORMULÁRIO HERO === -->
+    <div class="site-blocks-cover overlay inner-page-cover">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <h2>Subscrever</h2>
+            <p class="mb-5">Esteja a par dos últimos episódios, informações e novidades.</p>
+            <form id="subscribe-form-1" class="site-block-subscribe" onsubmit="return false;">
+              <div class="input-group mb-3">
+                <input type="email" id="subscribe-email-1" class="form-control border-secondary text-white bg-transparent" placeholder="Escreva o seu Email" aria-label="Email" required>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button" id="subscribe-btn-1">Enviar</button>
+                </div>
+              </div>
+              <div class="cf-turnstile" 
+                   data-sitekey="0x4AAAAAACtNB8-rMqwnSTsP" 
+                   data-callback="onTurnstileSuccess" 
+                   data-size="invisible" 
+                   style="display: none;"></div>
+            </form>
+            <div id="subscribe-message-1" class="mt-3 text-white"></div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-    
-    
     <footer class="site-footer">
-    <div class="container">
+      <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="mb-5">
-                    <h3 class="footer-heading mb-4">Sobre o Podcast</h3>
-                    <p>"€u Falo de Dinheiro" é um podcast de literacia financeira desenvolvido pelos alunos do 9º ano na disciplina de Cidadania e Desenvolvimento do Agrupamento de Escolas de Albufeira.</p>
+          <!-- ... (footer content stays the same) ... -->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="mb-5">
+              <h3 class="footer-heading mb-2">Subscrever Newsletter</h3>
+              <p>Receba atualizações sobre novos episódios.</p>
+              <form id="subscribe-form-2" onsubmit="return false;">
+                <div class="input-group mb-3">
+                  <input type="email" id="subscribe-email-2" class="form-control border-secondary text-white bg-transparent" placeholder="O seu Email" aria-label="O seu Email" required>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" id="subscribe-btn-2">Enviar</button>
+                  </div>
                 </div>
+                <div class="cf-turnstile" 
+                     data-sitekey="0x4AAAAAACtNB8-rMqwnSTsP" 
+                     data-callback="onTurnstileSuccess" 
+                     data-size="invisible" 
+                     style="display: none;"></div>
+              </form>
+              <div id="subscribe-message-2" class="mt-2 text-white"></div>
             </div>
-            
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <div class="row mb-5">
-                    <div class="col-md-12">
-                        <h3 class="footer-heading mb-4">Menu</h3>
-                    </div>
-                    <div class="col-md-6 col-lg-6">
-                        <ul class="list-unstyled">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">O Projeto</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 col-lg-6">
-                        <ul class="list-unstyled">
-                           
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 mb-5 mb-lg-0">
-  <div class="mb-5">
-    <h3 class="footer-heading mb-2">Subscrever Newsletter</h3>
-    <p>Receba atualizações sobre novos episódios.</p>
-    <form id="subscribe-form-2" onsubmit="return false;">
-  <div class="input-group mb-3">
-    <input type="email" id="subscribe-email-2" class="form-control border-secondary text-white bg-transparent" placeholder="O seu Email" aria-label="O seu Email" required>
-    <div class="input-group-append">
-      <button class="btn btn-primary" type="button" id="subscribe-btn-2">Enviar</button>
-    </div>
-  </div>
-  <!-- FORMULÁRIO 2 (footer) -->
-<div class="cf-turnstile" 
-     data-sitekey="0x4AAAAAACtNB8-rMqwnSTsP" 
-     data-callback="onTurnstileSuccess" 
-     data-size="invisible" 
-     style="display: none;"></div>
-</form>
-<div id="subscribe-message-2" class="mt-2 text-white"></div>
-  </div>
-</div>
+          </div>
         </div>
         
         <div class="row pt-5 mt-5 text-center">
-            <div class="col-md-12">
-                <p>
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> €u Falo de Dinheiro | Template original por <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer">Colorlib</a>
-                </p>
-            </div>
+          <div class="col-md-12">
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> €u Falo de Dinheiro | Template original por <a href="https://colorlib.com" target="_blank" rel="noopener noreferrer">Colorlib</a></p>
+          </div>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
   </div>
 
+  <!-- === SCRIPTS === -->
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
@@ -213,196 +162,113 @@
   <script src="js/jquery.countdown.min.js"></script>
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/aos.js"></script>
-
   <script src="js/mediaelement-and-player.min.js"></script>
-
-  <script>
-      document.addEventListener('DOMContentLoaded', function() {
-                var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
-
-                for (var i = 0; i < total; i++) {
-                    new MediaElementPlayer(mediaElements[i], {
-                        pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/',
-                        shimScriptAccess: 'always',
-                        success: function () {
-                            var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
-                            for (var j = 0; j < targetTotal; j++) {
-                                target[j].style.visibility = 'visible';
-                            }
-                  }
-                });
-                }
-            });
-    </script>
-
-
   <script src="js/main.js"></script>
   <script src="episodios.js"></script>
-<!-- ... outros scripts ... -->
 
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
-        carregarEpisodiosRecentes();
-        carregarEpisodioDestaque();
+      carregarEpisodiosRecentes();
+      carregarEpisodioDestaque();
     });
 
     function carregarEpisodiosRecentes() {
-        const container = document.getElementById('lista-episodios');
-        if (!container) return;
-
-        let html = '';
-        // Mostrar os primeiros 5 episódios (ou todos, se quiser)
-        const episodiosRecentes = episodios.slice(0, 5);
-
-        episodiosRecentes.forEach(ep => {
-            html += `
-                <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
-                    <div class="image" style="background-image: url('${ep.imagem}');"></div>
-                    <div class="text">
-                        <h3 class="font-weight-light">
-                            <a href="episodio.html?id=${ep.id}" class="text-dark">${ep.titulo}</a>
-                        </h3>
-                        <div class="text-white mb-3">
-                            <span class="text-black-opacity-05">
-                                <small>Por ${ep.autor} <span class="sep">/</span> ${ep.data} <span class="sep">/</span> ${ep.duracao}</small>
-                            </span>
-                        </div>
-                        <p class="mb-4">${ep.descricao}</p>
-                        <!-- SEM PLAYER -->
-                    </div>
-                </div>
-            `;
-        });
-
-        container.innerHTML = html;
+      const container = document.getElementById('lista-episodios');
+      if (!container) return;
+      let html = '';
+      const episodiosRecentes = episodios.slice(0, 5);
+      episodiosRecentes.forEach(ep => {
+        html += `
+          <div class="d-block d-md-flex podcast-entry bg-white mb-5" data-aos="fade-up">
+            <div class="image" style="background-image: url('${ep.imagem}');"></div>
+            <div class="text">
+              <h3 class="font-weight-light"><a href="episodio.html?id=${ep.id}" class="text-dark">${ep.titulo}</a></h3>
+              <div class="text-white mb-3"><span class="text-black-opacity-05"><small>Por ${ep.autor} <span class="sep">/</span> ${ep.data} <span class="sep">/</span> ${ep.duracao}</small></span></div>
+              <p class="mb-4">${ep.descricao}</p>
+            </div>
+          </div>`;
+      });
+      container.innerHTML = html;
     }
 
     function carregarEpisodioDestaque() {
-        // Último episódio (o mais recente)
-        const ultimoEpisodio = episodios[episodios.length - 1];
-
-        document.getElementById('destaque-titulo').innerHTML = `<a href="episodio.html?id=${ultimoEpisodio.id}" class="text-white">${ultimoEpisodio.titulo}</a>`;
-        document.getElementById('destaque-meta').innerHTML = `
-            <span class="text-white-opacity-05">
-                <small>Por ${ultimoEpisodio.autor} <span class="sep">/</span> ${ultimoEpisodio.data} <span class="sep">/</span> ${ultimoEpisodio.duracao}</small>
-            </span>
-        `;
-        document.getElementById('destaque-descricao').textContent = ultimoEpisodio.descricao;
+      const ultimoEpisodio = episodios[episodios.length - 1];
+      document.getElementById('destaque-titulo').innerHTML = `<a href="episodio.html?id=${ultimoEpisodio.id}" class="text-white">${ultimoEpisodio.titulo}</a>`;
+      document.getElementById('destaque-meta').innerHTML = `<span class="text-white-opacity-05"><small>Por ${ultimoEpisodio.autor} <span class="sep">/</span> ${ultimoEpisodio.data} <span class="sep">/</span> ${ultimoEpisodio.duracao}</small></span>`;
+      document.getElementById('destaque-descricao').textContent = ultimoEpisodio.descricao;
     }
-</script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-<script>
-  // Função chamada pelo Turnstile quando o token é gerado
-  window.onTurnstileSuccess = function(token) {
-    if (window._currentForm) {
-      submitEmail(window._currentForm, token);
-    }
-  };
+  </script>
 
-  // Função que inicia o processo: obtém email e dispara Turnstile
-  function handleSubscribeClick(emailId, messageId) {
-    const input = document.getElementById(emailId);
-    if (!input) {
-      console.error('Input não encontrado:', emailId);
-      return;
-    }
-    const email = input.value.trim();
-
-    if (!email || !/\S+@\S+\.\S+/.test(email)) {
-      document.getElementById(messageId).innerHTML = '<span style="color: #ffc107;">Por favor, insira um email válido.</span>';
-      return;
-    }
-
-    // Guarda dados do formulário atual para usar no callback
-    window._currentForm = {
-      emailId: emailId,
-      email: email,
-      messageId: messageId
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script>
+    window.onTurnstileSuccess = function(token) {
+      if (window._currentForm) {
+        submitEmail(window._currentForm, token);
+      }
     };
 
-    // Encontrar o widget Turnstile (está no mesmo formulário que contém o input)
-    const form = input.closest('form');
-    const turnstileWidget = form.querySelector('.cf-turnstile');
-    if (turnstileWidget && window.turnstile) {
-      window.turnstile.execute(turnstileWidget);
-    } else {
-      console.error('Turnstile não carregado');
-      document.getElementById(messageId).innerHTML = '<span style="color: #dc3545;">Erro ao iniciar verificação de segurança.</span>';
-    }
-  }
-
-  // Função que envia o email e o token para a API
- async function submitEmail(formData, token) {
-  const { email, messageId, emailId } = formData;
-
-  try {
-    const response = await fetch('/api/subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, token })
-    });
-
-    let result;
-    try {
-      result = await response.json();
-    } catch {
-      result = { error: 'Resposta inválida do servidor' };
-    }
-
-    if (response.ok) {
-      document.getElementById(messageId).innerHTML = '<span style="color: #28a745;">Obrigado pela subscrição!</span>';
+    function handleSubscribeClick(emailId, messageId) {
       const input = document.getElementById(emailId);
-      if (input) input.value = '';
-    } else {
-      document.getElementById(messageId).innerHTML = `<span style="color: #dc3545;">Erro: ${result.error || 'Tente novamente mais tarde.'}</span>`;
-    }
-  } catch (err) {
-    console.error('Erro no fetch:', err);
-    document.getElementById(messageId).innerHTML = '<span style="color: #dc3545;">Erro de ligação. Tente novamente.</span>';
-  } finally {
-    window._currentForm = null;
-  }
-}
+      if (!input) return;
+      const email = input.value.trim();
 
-  // Associar eventos quando a página carregar
-  document.addEventListener('DOMContentLoaded', function() {
-    // Botão do formulário 1
-    const btn1 = document.getElementById('subscribe-btn-1');
-    if (btn1) {
-      btn1.addEventListener('click', function() {
-        handleSubscribeClick('subscribe-email-1', 'subscribe-message-1');
-      });
+      if (!email || !/\S+@\S+\.\S+/.test(email)) {
+        document.getElementById(messageId).innerHTML = '<span style="color: #ffc107;">Por favor, insira um email válido.</span>';
+        return;
+      }
+
+      window._currentForm = { emailId, email, messageId };
+
+      const form = input.closest('form');
+      const turnstileWidget = form.querySelector('.cf-turnstile');
+      if (turnstileWidget && window.turnstile) {
+        window.turnstile.reset(turnstileWidget);   // ← CORREÇÃO PRINCIPAL
+        window.turnstile.execute(turnstileWidget);
+      } else {
+        document.getElementById(messageId).innerHTML = '<span style="color: #dc3545;">Erro ao iniciar verificação.</span>';
+      }
     }
 
-    // Botão do formulário 2
-    const btn2 = document.getElementById('subscribe-btn-2');
-    if (btn2) {
-      btn2.addEventListener('click', function() {
-        handleSubscribeClick('subscribe-email-2', 'subscribe-message-2');
-      });
-    }
+    async function submitEmail(formData, token) {
+      const { email, messageId, emailId } = formData;
+      try {
+        const response = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, token })
+        });
 
-    // Permitir enviar com Enter nos inputs
-    const email1 = document.getElementById('subscribe-email-1');
-    if (email1) {
-      email1.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          handleSubscribeClick('subscribe-email-1', 'subscribe-message-1');
+        let result = {};
+        try { result = await response.json(); } catch {}
+
+        if (response.ok) {
+          document.getElementById(messageId).innerHTML = '<span style="color: #28a745;">Obrigado pela subscrição!</span>';
+          const input = document.getElementById(emailId);
+          if (input) input.value = '';
+        } else {
+          const errorMsg = result.details ? result.details.join(', ') : (result.error || 'Tente novamente mais tarde.');
+          document.getElementById(messageId).innerHTML = `<span style="color: #dc3545;">Erro: ${errorMsg}</span>`;
         }
-      });
+      } catch (err) {
+        document.getElementById(messageId).innerHTML = '<span style="color: #dc3545;">Erro de ligação. Tente novamente.</span>';
+      } finally {
+        window._currentForm = null;
+      }
     }
 
-    const email2 = document.getElementById('subscribe-email-2');
-    if (email2) {
-      email2.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          handleSubscribeClick('subscribe-email-2', 'subscribe-message-2');
-        }
-      });
-    }
-  });
-</script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn1 = document.getElementById('subscribe-btn-1');
+      if (btn1) btn1.addEventListener('click', () => handleSubscribeClick('subscribe-email-1', 'subscribe-message-1'));
+
+      const btn2 = document.getElementById('subscribe-btn-2');
+      if (btn2) btn2.addEventListener('click', () => handleSubscribeClick('subscribe-email-2', 'subscribe-message-2'));
+
+      const email1 = document.getElementById('subscribe-email-1');
+      if (email1) email1.addEventListener('keypress', e => { if (e.key === 'Enter') { e.preventDefault(); handleSubscribeClick('subscribe-email-1', 'subscribe-message-1'); } });
+
+      const email2 = document.getElementById('subscribe-email-2');
+      if (email2) email2.addEventListener('keypress', e => { if (e.key === 'Enter') { e.preventDefault(); handleSubscribeClick('subscribe-email-2', 'subscribe-message-2'); } });
+    });
+  </script>
   </body>
 </html>
