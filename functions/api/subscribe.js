@@ -1,5 +1,6 @@
 export async function onRequest(context) {
   const { request, env } = context;
+
   if (request.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Método não permitido' }), { 
       status: 405, 
@@ -9,6 +10,7 @@ export async function onRequest(context) {
 
   try {
     const { email, token } = await request.json();
+
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
       return new Response(JSON.stringify({ error: 'Email inválido' }), { 
         status: 400, 
@@ -18,7 +20,7 @@ export async function onRequest(context) {
 
     const secret = env.TURNSTILE_SECRET_KEY;
     if (!secret) {
-      return new Response(JSON.stringify({ error: 'TURNSTILE_SECRET_KEY não configurada no dashboard' }), { 
+      return new Response(JSON.stringify({ error: 'TURNSTILE_SECRET_KEY não está configurada' }), { 
         status: 500, 
         headers: { 'Content-Type': 'application/json' } 
       });
@@ -29,9 +31,9 @@ export async function onRequest(context) {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `secret=${encodeURIComponent(secret)}&response=${encodeURIComponent(token)}`
     });
-    const turnstileData = await turnstileResult.json();
 
-    console.log('Turnstile debug:', turnstileData); // ← aparece nos logs do dashboard
+    const turnstileData = await turnstileResult.json();
+    console.log('Turnstile debug:', turnstileData);   // ← aparece nos logs do Cloudflare
 
     if (!turnstileData.success) {
       return new Response(JSON.stringify({ 
