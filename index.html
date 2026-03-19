@@ -117,7 +117,30 @@
     </div>
 
     <footer class="site-footer">
-      
+      <div class="container">
+        <div class="row">
+          <!-- ... (footer content stays the same) ... -->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="mb-5">
+              <h3 class="footer-heading mb-2">Subscrever Newsletter</h3>
+              <p>Receba atualizações sobre novos episódios.</p>
+              <form id="subscribe-form-2" onsubmit="return false;">
+                <div class="input-group mb-3">
+                  <input type="email" id="subscribe-email-2" class="form-control border-secondary text-white bg-transparent" placeholder="O seu Email" aria-label="O seu Email" required>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button" id="subscribe-btn-2">Enviar</button>
+                  </div>
+                </div>
+                <div class="cf-turnstile" 
+                     data-sitekey="0x4AAAAAACtNB8-rMqwnSTsP" 
+                     data-callback="onTurnstileSuccess" 
+                     data-size="invisible" 
+                     style="display: none;"></div>
+              </form>
+              <div id="subscribe-message-2" class="mt-2 text-white"></div>
+            </div>
+          </div>
+        </div>
         
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
