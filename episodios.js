@@ -408,7 +408,7 @@ const episodios = [
     autor: "Shubham Silwal e Tomás Jesus - 9ºA",
     data: "Março 2026",
     duracao: "2:40 minutos",
-    descricao: "Neste episódio, o Shubham e o Tomás explicam a diferença crucial entre juros nominais e juros reais. Usando um exemplo prático com pizzas, demonstram como a inflação pode reduzir o poder de compra mesmo quando o saldo bancário aumenta. Se o banco paga 2% de juros mas a inflação é de 3%, na realidade estás a perder 1% do teu poder de compra. Os apresentadores partilham a 'dica de ouro': comparar sempre a taxa de juros com a taxa de inflação para saber se o teu dinheiro está realmente a crescer ou a perder valor.",
+    descricao: "Neste episódio, o Shubham e o Tomás explicam a diferença crucial entre juros nominais e juros reais. Usando um exemplo prático com pizzas, demonstram como a inflação pode reduzir o poder de compra mesmo quando o saldo bancário aumenta. Os apresentadores partilham a 'dica de ouro': comparar sempre a taxa de juros com a taxa de inflação para saber se o teu dinheiro está realmente a crescer ou a perder valor.",
     imagem: "images/img_9.jpg",
     audio: "https://pub-c876b1902a0a426d9d354f25c6e000fa.r2.dev/episodio_9.mp3",
     topicos: [
