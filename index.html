@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="mediaelementplayer.css">
     
     <style>
-        /* Estilos específicos para os episódios */
+        /* Estilos personalizados para os episódios */
         .episodio-destaque-section {
             background: linear-gradient(135deg, #f23a2e 0%, #c7180c 100%);
             color: #fff;
@@ -76,7 +76,7 @@
             margin-bottom: 3rem;
         }
 
-        .podcast-entry {
+        .podcast-entry-custom {
             background: #fff;
             border-radius: 4px;
             overflow: hidden;
@@ -84,34 +84,34 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .podcast-entry:hover {
+        .podcast-entry-custom:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 40px -5px rgba(0, 0, 0, 0.2);
         }
 
-        .podcast-entry .image {
+        .podcast-entry-custom .image {
             background-size: cover;
             background-position: center center;
             height: 250px;
         }
 
-        .podcast-entry .text {
+        .podcast-entry-custom .text {
             padding: 2rem;
         }
 
-        .podcast-entry .text h3 {
+        .podcast-entry-custom .text h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
             color: #25262a;
         }
 
-        .podcast-entry .text .meta {
+        .podcast-entry-custom .text .meta {
             color: #f23a2e;
             font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
 
-        .podcast-entry .text p {
+        .podcast-entry-custom .text p {
             color: #4d4d4d;
             margin-bottom: 1rem;
         }
@@ -162,7 +162,8 @@
             flex-wrap: wrap;
         }
 
-        .paginacao-container a {
+        .paginacao-container a,
+        .paginacao-container span {
             display: inline-block;
             width: 40px;
             height: 40px;
@@ -185,30 +186,6 @@
         .paginacao-container a.disabled {
             color: #ccc;
             pointer-events: none;
-        }
-
-        /* Newsletter */
-        .site-block-subscribe {
-            background: #f8f9fa;
-            padding: 3rem 2rem;
-            border-radius: 4px;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .site-block-subscribe h2 {
-            color: #25262a;
-            margin-bottom: 1rem;
-        }
-
-        .site-block-subscribe .form-control {
-            max-width: 400px;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .site-block-subscribe .btn {
-            margin-top: 1rem;
         }
 
         /* Loading */
@@ -370,7 +347,7 @@
                 const col = document.createElement('div');
                 col.className = 'col-md-6 col-lg-4 mb-4';
                 col.innerHTML = `
-                    <div class="podcast-entry">
+                    <div class="podcast-entry-custom">
                         <div class="image" style="background-image: url('${ep.imagem}');"></div>
                         <div class="text">
                             <span class="meta">📅 ${ep.data} | ⏱ ${ep.duracao}</span>
