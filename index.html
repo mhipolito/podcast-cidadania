@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="mediaelementplayer.css">
     
     <style>
-        /* Apenas estilos mínimos necessários */
+        /* Estilos específicos para os episódios */
         .episodio-destaque {
             background: linear-gradient(135deg, #f23a2e 0%, #c7180c 100%);
             color: #fff;
@@ -318,10 +318,10 @@
                         renderizarEpisodios(paginaAtual);
                         window.scrollTo(0, 0);
                     };
-                    li.appendChild(a);
                 }
-                ul.appendChild(li);
+                li.appendChild(a);
             }
+            ul.appendChild(li);
             
             // Botão seguinte
             const liSeguinte = document.createElement('li');
