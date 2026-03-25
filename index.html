@@ -4,549 +4,403 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>€u Falo de Dinheiro! — Podcast de Literacia Financeira</title>
+    
+    <!-- CSS do Template -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="aos.css">
+    <link rel="stylesheet" href="owl.theme.default.min.css">
+    <link rel="stylesheet" href="mediaelementplayer.css">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 0.8;
-        }
-
-        /* Main Content */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Episode Destaque */
-        #destaque-container {
+        /* Estilos específicos para os episódios */
+        .episodio-destaque-section {
+            background: linear-gradient(135deg, #f23a2e 0%, #c7180c 100%);
+            color: #fff;
+            padding: 4rem 0;
             margin-bottom: 3rem;
         }
 
-        .episodio-destaque {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .episodio-destaque h2 {
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+        .episodio-destaque-section h2 {
+            color: #fff;
+            margin-bottom: 2rem;
         }
 
         .destaque-content {
-            display: grid;
-            grid-template-columns: 300px 1fr;
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
             align-items: center;
         }
 
         .destaque-content img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 300px;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .destaque-info h3 {
-            font-size: 1.5rem;
+            color: #fff;
+            font-size: 1.8rem;
             margin-bottom: 1rem;
         }
 
         .destaque-info p {
+            color: rgba(255,255,255,0.9);
             margin-bottom: 0.5rem;
-            opacity: 0.9;
         }
 
-        .btn-play-grande {
+        .btn-play-destaque {
             display: inline-block;
-            background: white;
-            color: #667eea;
+            background: #fff;
+            color: #f23a2e;
             padding: 1rem 2rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             margin-top: 1rem;
-            transition: transform 0.3s;
+            transition: all 0.3s;
         }
 
-        .btn-play-grande:hover {
+        .btn-play-destaque:hover {
+            background: #f8f9fa;
             transform: scale(1.05);
         }
 
-        /* Títulos de Secção */
-        .section-title {
-            color: #333;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-        }
-
-        /* Episodios Grid */
-        #episodios-container {
+        /* Grid de episódios */
+        .episodios-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
 
-        .episodio-card {
-            background: white;
-            border-radius: 15px;
+        .podcast-entry {
+            background: #fff;
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 40px -10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .episodio-card:hover {
+        .podcast-entry:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 40px -5px rgba(0, 0, 0, 0.2);
         }
 
-        .episodio-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        .podcast-entry .image {
+            background-size: cover;
+            background-position: center center;
+            height: 250px;
         }
 
-        .episodio-info {
-            padding: 1.5rem;
+        .podcast-entry .text {
+            padding: 2rem;
         }
 
-        .episodio-data {
-            color: #667eea;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        .episodio-info h3 {
-            font-size: 1.2rem;
-            margin: 0.5rem 0;
-            color: #333;
-        }
-
-        .autor {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .duracao {
-            color: #888;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .descricao {
-            color: #555;
-            font-size: 0.9rem;
+        .podcast-entry .text h3 {
+            font-size: 1.3rem;
             margin-bottom: 1rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            color: #25262a;
         }
 
-        .episodio-actions {
+        .podcast-entry .text .meta {
+            color: #f23a2e;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .podcast-entry .text p {
+            color: #4d4d4d;
+            margin-bottom: 1rem;
+        }
+
+        .podcast-actions {
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
         }
 
-        .btn-play, .btn-detalhes {
-            display: inline-block;
+        .btn-ouvir {
+            background: #f23a2e;
+            color: #fff;
             padding: 0.5rem 1rem;
-            border-radius: 5px;
+            border-radius: 4px;
             text-decoration: none;
             font-size: 0.9rem;
             transition: background 0.3s;
         }
 
-        .btn-play {
-            background: #667eea;
-            color: white;
-        }
-
-        .btn-play:hover {
-            background: #5568d3;
+        .btn-ouvir:hover {
+            background: #c7180c;
+            color: #fff;
         }
 
         .btn-detalhes {
-            background: #333;
-            color: white;
+            background: #343a40;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.3s;
         }
 
         .btn-detalhes:hover {
-            background: #555;
+            background: #23272b;
+            color: #fff;
         }
 
         /* Paginação */
-        #paginacao-container {
+        .paginacao-container {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 0.5rem;
-            padding: 2rem;
+            padding: 2rem 0;
             flex-wrap: wrap;
         }
 
-        #paginacao-container a {
-            padding: 0.75rem 1.25rem;
-            background: #667eea;
-            color: white;
+        .paginacao-container a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            color: #f23a2e;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        #paginacao-container a:hover {
-            background: #5568d3;
+        .paginacao-container a:hover,
+        .paginacao-container a.ativo {
+            background: #f23a2e;
+            color: #fff;
+            border-color: #f23a2e;
         }
 
-        #paginacao-container a.ativo {
-            background: #764ba2;
-            font-weight: bold;
-        }
-
-        #paginacao-container a.disabled {
-            background: #ccc;
+        .paginacao-container a.disabled {
+            color: #ccc;
             pointer-events: none;
-            cursor: not-allowed;
         }
 
         /* Newsletter */
-        .newsletter {
-            background: white;
+        .site-block-subscribe {
+            background: #f8f9fa;
             padding: 3rem 2rem;
-            border-radius: 15px;
+            border-radius: 4px;
             text-align: center;
             margin-bottom: 3rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .newsletter h2 {
+        .site-block-subscribe h2 {
+            color: #25262a;
             margin-bottom: 1rem;
-            color: #667eea;
         }
 
-        .newsletter-form {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
+        .site-block-subscribe .form-control {
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
         }
 
-        .newsletter-form input {
-            padding: 0.75rem 1.5rem;
-            border: 2px solid #ddd;
-            border-radius: 30px;
-            font-size: 1rem;
-            width: 300px;
+        .site-block-subscribe .btn {
+            margin-top: 1rem;
         }
 
-        .newsletter-form button {
-            padding: 0.75rem 2rem;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .newsletter-form button:hover {
-            background: #5568d3;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
+        /* Loading */
+        .loading-episodios {
             text-align: center;
-            padding: 2rem;
-        }
-
-        footer a {
-            color: #667eea;
-            text-decoration: none;
+            padding: 3rem;
+            color: #666;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
+            .episodios-grid {
+                grid-template-columns: 1fr;
             }
 
             .destaque-content {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                text-align: center;
             }
 
-            #episodios-container {
-                grid-template-columns: 1fr;
+            .destaque-content img {
+                max-width: 100%;
             }
-
-            .newsletter-form input {
-                width: 100%;
-            }
-        }
-
-        /* Debug - remover em produção */
-        .debug-info {
-            background: #ffeb3b;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <a href="index.html">€u Falo de Dinheiro!</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
+
+    <!-- Header / Navbar -->
+    <div class="site-navbar">
+        <nav class="site-navigation">
+            <div class="container">
+                <div class="site-logo">
+                    <a href="index.html">€u Falo de Dinheiro!</a>
+                </div>
+                <ul class="site-menu">
+                    <li class="active"><a href="index.html">Home</a></li>
                     <li><a href="about.html">O Projeto</a></li>
                 </ul>
-            </nav>
-        </div>
-    </header>
+            </div>
+        </nav>
+    </div>
 
     <!-- Main Content -->
-    <main>
-        <!-- Debug Info -->
-        <div id="debug-info" class="debug-info"></div>
-
-        <!-- Episode Destaque (último episódio) -->
-        <section id="destaque-container"></section>
+    <main class="site-wrap">
+        
+        <!-- Episode Destaque -->
+        <section id="destaque-container" class="episodio-destaque-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>🎙️ Último Episódio</h2>
+                    </div>
+                </div>
+                <div id="destaque-content" class="destaque-content">
+                    <p class="loading-episodios">Carregando episódio em destaque...</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Lista de Episódios -->
-        <h2 class="section-title">Últimos Podcasts</h2>
-        <section id="episodios-container">
-            <p style="text-align: center; padding: 2rem; color: #666;">Carregando episódios...</p>
-        </section>
+        <section class="site-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12 text-center">
+                        <h2 class="site-section-heading text-center">Últimos Podcasts</h2>
+                    </div>
+                </div>
+                
+                <div id="episodios-container" class="episodios-grid">
+                    <div class="col-12">
+                        <p class="loading-episodios">Carregando episódios...</p>
+                    </div>
+                </div>
 
-        <!-- Paginação -->
-        <nav id="paginacao-container"></nav>
+                <!-- Paginação -->
+                <div class="row">
+                    <div class="col-12">
+                        <nav id="paginacao-container" class="paginacao-container"></nav>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Newsletter -->
-        <section class="newsletter">
-            <h2>Subscrever</h2>
-            <p>Esteja a par dos últimos episódios, informações e novidades.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="O seu email" required>
-                <button type="submit">Enviar</button>
-            </form>
+        <section class="site-block-subscribe">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto text-center">
+                        <h2>Subscrever</h2>
+                        <p>Esteja a par dos últimos episódios, informações e novidades.</p>
+                        <form class="site-block-subscribe-form">
+                            <input type="email" class="form-control" placeholder="O seu email" required>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </section>
+
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>Copyright © €u Falo de Dinheiro | Template original por <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>Copyright © €u Falo de Dinheiro | Template original por <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Scripts -->
     <script src="episodios.js"></script>
     <script>
-        // Debug: Verificar se episodios.js carregou
-        console.log('=== INÍCIO DO SCRIPT ===');
-        console.log('Array episodios existe?', typeof episodios !== 'undefined');
-        console.log('Número de episódios:', episodios ? episodios.length : 0);
-
         // Configuração
-        const episodiosPorPagina = 5; // 5 episódios por página (exclui destaque)
+        const episodiosPorPagina = 5;
         let paginaAtual = 1;
 
         // Ordenar episódios por ID descendente (mais recente primeiro)
         const episodiosOrdenados = [...episodios].sort((a, b) => b.id - a.id);
 
-        console.log('Episódios ordenados:', episodiosOrdenados.map(e => e.id));
-
         // Elementos do DOM
-        const containerDestaque = document.getElementById('destaque-container');
+        const containerDestaque = document.getElementById('destaque-content');
         const containerEpisodios = document.getElementById('episodios-container');
         const containerPaginacao = document.getElementById('paginacao-container');
-        const debugInfo = document.getElementById('debug-info');
-
-        console.log('Containers encontrados:', {
-            destaque: !!containerDestaque,
-            episodios: !!containerEpisodios,
-            paginacao: !!containerPaginacao
-        });
-
-        // Atualizar debug info
-        function atualizarDebug() {
-            const totalPaginas = Math.ceil((episodiosOrdenados.length - 1) / episodiosPorPagina);
-            debugInfo.innerHTML = `
-                <strong>Debug:</strong> Total episódios: ${episodiosOrdenados.length} | 
-                Página atual: ${paginaAtual} | 
-                Total páginas: ${totalPaginas} | 
-                Episódios por página: ${episodiosPorPagina}
-            `;
-        }
 
         // Função para renderizar o episódio em destaque
         function renderizarDestaque() {
-            console.log('Renderizar destaque...');
-            const ultimoEpisodio = episodiosOrdenados[0]; // Episódio 11
+            const ultimoEpisodio = episodiosOrdenados[0];
             
-            if (!containerDestaque) {
-                console.error('Container destaque não encontrado!');
-                return;
-            }
-
             containerDestaque.innerHTML = `
-                <section class="episodio-destaque">
-                    <h2>🎙️ Último Episódio</h2>
-                    <div class="destaque-content">
-                        <img src="${ultimoEpisodio.imagem}" alt="${ultimoEpisodio.titulo}" onerror="this.src='https://via.placeholder.com/300x300?text=Episodio+${ultimoEpisodio.id}'">
-                        <div class="destaque-info">
-                            <h3>${ultimoEpisodio.titulo}</h3>
-                            <p><strong>Autor:</strong> ${ultimoEpisodio.autor}</p>
-                            <p><strong>Data:</strong> ${ultimoEpisodio.data}</p>
-                            <p><strong>Duração:</strong> ${ultimoEpisodio.duracao}</p>
-                            <p>${ultimoEpisodio.descricao.substring(0, 200)}...</p>
-                            <a href="${ultimoEpisodio.audio}" class="btn-play-grande" target="_blank">▶ Ouvir Agora</a>
-                        </div>
-                    </div>
-                </section>
+                <div class="col-md-4">
+                    <img src="${ultimoEpisodio.imagem}" alt="${ultimoEpisodio.titulo}" onerror="this.src='https://via.placeholder.com/300x300?text=Episodio+${ultimoEpisodio.id}'">
+                </div>
+                <div class="col-md-8 destaque-info">
+                    <h3>${ultimoEpisodio.titulo}</h3>
+                    <p><strong>👤 Autor:</strong> ${ultimoEpisodio.autor}</p>
+                    <p><strong>📅 Data:</strong> ${ultimoEpisodio.data}</p>
+                    <p><strong>⏱ Duração:</strong> ${ultimoEpisodio.duracao}</p>
+                    <p>${ultimoEpisodio.descricao.substring(0, 250)}...</p>
+                    <a href="${ultimoEpisodio.audio}" class="btn-play-destaque" target="_blank">▶ Ouvir Agora</a>
+                </div>
             `;
-            console.log('Destaque renderizado:', ultimoEpisodio.id);
         }
 
         // Função para renderizar episódios
         function renderizarEpisodios(pagina) {
-            console.log('Renderizar página:', pagina);
-            
-            // Página 1: episódios 10, 9, 8, 7, 6 (índices 1-5)
-            // Página 2: episódios 5, 4, 3, 2, 1 (índices 6-10)
-            const inicio = (pagina - 1) * episodiosPorPagina + 1; // +1 para pular o destaque
+            const inicio = (pagina - 1) * episodiosPorPagina + 1;
             const fim = inicio + episodiosPorPagina;
             const episodiosPagina = episodiosOrdenados.slice(inicio, fim);
             
-            console.log('Episódios da página:', episodiosPagina.map(e => e.id));
-
-            if (!containerEpisodios) {
-                console.error('Container episódios não encontrado!');
-                return;
-            }
-
-            // Limpar conteúdo anterior
             containerEpisodios.innerHTML = '';
             
-            // Criar cards dos episódios
             episodiosPagina.forEach((ep) => {
-                const card = document.createElement('article');
-                card.className = 'episodio-card';
-                card.innerHTML = `
-                    <img src="${ep.imagem}" alt="${ep.titulo}" onerror="this.src='https://via.placeholder.com/350x200?text=Episodio+${ep.id}'">
-                    <div class="episodio-info">
-                        <span class="episodio-data">${ep.data}</span>
-                        <h3>${ep.titulo}</h3>
-                        <p class="autor">👤 ${ep.autor}</p>
-                        <p class="duracao">⏱ ${ep.duracao}</p>
-                        <p class="descricao">${ep.descricao.substring(0, 150)}...</p>
-                        <div class="episodio-actions">
-                            <a href="${ep.audio}" class="btn-play" target="_blank">▶ Ouvir</a>
-                            <a href="episodio.html?id=${ep.id}" class="btn-detalhes">Ver Detalhes</a>
+                const col = document.createElement('div');
+                col.className = 'col-md-6 col-lg-4 mb-4';
+                col.innerHTML = `
+                    <div class="podcast-entry">
+                        <div class="image" style="background-image: url('${ep.imagem}');"></div>
+                        <div class="text">
+                            <span class="meta">📅 ${ep.data} | ⏱ ${ep.duracao}</span>
+                            <h3>${ep.titulo}</h3>
+                            <p class="mb-3">👤 ${ep.autor}</p>
+                            <p>${ep.descricao.substring(0, 120)}...</p>
+                            <div class="podcast-actions">
+                                <a href="${ep.audio}" class="btn-ouvir" target="_blank">▶ Ouvir</a>
+                                <a href="episodio.html?id=${ep.id}" class="btn-detalhes">Ver Detalhes</a>
+                            </div>
                         </div>
                     </div>
                 `;
-                
-                containerEpisodios.appendChild(card);
+                containerEpisodios.appendChild(col);
             });
             
-            console.log('Cards criados:', episodiosPagina.length);
-            
-            // Atualizar paginação
             atualizarPaginacao();
-            atualizarDebug();
         }
 
-        // Função para atualizar controles de paginação
+        // Função para atualizar paginação
         function atualizarPaginacao() {
-            // Total de páginas (exclui o episódio de destaque)
             const totalEpisodiosParaLista = episodiosOrdenados.length - 1;
             const totalPaginas = Math.ceil(totalEpisodiosParaLista / episodiosPorPagina);
             
-            console.log('Atualizar paginação:', { totalPaginas, paginaAtual });
-
-            if (!containerPaginacao) {
-                console.error('Container paginação não encontrado!');
-                return;
-            }
-
             containerPaginacao.innerHTML = '';
             
             // Botão anterior
             const btnAnterior = document.createElement('a');
             btnAnterior.href = '#';
-            btnAnterior.textContent = '❮ Anterior';
+            btnAnterior.textContent = '<';
             btnAnterior.className = paginaAtual === 1 ? 'disabled' : '';
             btnAnterior.onclick = (e) => {
                 e.preventDefault();
-                console.log('Clique anterior, página atual:', paginaAtual);
                 if (paginaAtual > 1) {
                     paginaAtual--;
                     renderizarEpisodios(paginaAtual);
@@ -563,7 +417,6 @@
                 btnPagina.className = i === paginaAtual ? 'ativo' : '';
                 btnPagina.onclick = (e) => {
                     e.preventDefault();
-                    console.log('Clique página:', i);
                     paginaAtual = i;
                     renderizarEpisodios(paginaAtual);
                     window.scrollTo(0, 0);
@@ -574,11 +427,10 @@
             // Botão seguinte
             const btnSeguinte = document.createElement('a');
             btnSeguinte.href = '#';
-            btnSeguinte.textContent = 'Seguinte ❯';
+            btnSeguinte.textContent = '>';
             btnSeguinte.className = paginaAtual === totalPaginas ? 'disabled' : '';
             btnSeguinte.onclick = (e) => {
                 e.preventDefault();
-                console.log('Clique seguinte, página atual:', paginaAtual);
                 if (paginaAtual < totalPaginas) {
                     paginaAtual++;
                     renderizarEpisodios(paginaAtual);
@@ -586,24 +438,16 @@
                 }
             };
             containerPaginacao.appendChild(btnSeguinte);
-
-            console.log('Paginação atualizada');
         }
 
-        // Inicializar quando o DOM estiver pronto
+        // Inicializar
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('=== DOM CARREGADO ===');
-            console.log('Episódios disponíveis:', episodios.length);
-            
             renderizarDestaque();
             renderizarEpisodios(paginaAtual);
-            
-            console.log('=== INICIALIZAÇÃO COMPLETA ===');
         });
 
-        // Fallback se DOM já estiver carregado
+        // Fallback
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            console.log('DOM já carregado, executar imediatamente');
             renderizarDestaque();
             renderizarEpisodios(paginaAtual);
         }
