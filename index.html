@@ -65,6 +65,7 @@
         .btn-play-destaque:hover {
             background: #f8f9fa;
             transform: scale(1.05);
+            color: #f23a2e;
         }
 
         /* Grid de episódios */
@@ -252,7 +253,7 @@
     </div>
 
     <!-- Main Content -->
-    <main class="site-wrap">
+    <div class="site-wrap">
         
         <!-- Episode Destaque -->
         <section id="destaque-container" class="episodio-destaque-section">
@@ -277,9 +278,11 @@
                     </div>
                 </div>
                 
-                <div id="episodios-container" class="episodios-grid">
+                <div class="row">
                     <div class="col-12">
-                        <p class="loading-episodios">Carregando episódios...</p>
+                        <div id="episodios-container" class="episodios-grid">
+                            <p class="loading-episodios">Carregando episódios...</p>
+                        </div>
                     </div>
                 </div>
 
@@ -308,7 +311,7 @@
             </div>
         </section>
 
-    </main>
+    </div>
 
     <!-- Footer -->
     <footer class="site-footer">

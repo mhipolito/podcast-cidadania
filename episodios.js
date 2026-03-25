@@ -459,7 +459,7 @@ const episodios = [
     autor: "Vitória Brioso, Lara Abreu e Eva Oliveira - 9ºA",
     data: "Março 2026",
     duracao: "3:20 minutos",
-    descricao: "Neste episódio, a Vitória, a Lara e a Eva explicam a importância de ter uma conta bancária no dia-a-dia. Abordam as vantagens como segurança contra roubos, organização financeira através de extratos e facilidade nos pagamentos e recebimentos. Discutem também os custos associados, como comissões de manutenção, e apresentam a solução da Conta de Serviços Mínimos Bancários para garantir acesso essencial a custo reduzido.",
+    descricao: "Neste episódio, a Vitória, a Lara e a Eva explicam a importância de ter uma conta bancária no dia-a-dia. Abordam as vantagens como segurança contra roubos, organização financeira através de extratos e facilidade nos pagamentos e recebimentos.",
     imagem: "images/img_10.jpg",
     audio: "https://pub-c876b1902a0a426d9d354f25c6e000fa.r2.dev/episodio_10.mp3",
     topicos: [
@@ -510,7 +510,7 @@ const episodios = [
     autor: "Érica Barreto e Vladimir Jones - 9ºB",
     data: "Março 2026",
     duracao: "2:05 minutos",
-    descricao: "Neste episódio, a Érica e o Vladimir explicam de forma simples o conceito de inflação. Abordam por que razão os preços sobem com o passar do tempo e como isso afeta o poder de compra das famílias. Discutem as principais causas da inflação, como o excesso de procura, o aumento dos custos de produção e as expectativas de preços futuros. Uma explicação clara e acessível sobre por que o dinheiro vale menos quando a inflação sobe.",
+    descricao: "Neste episódio, a Érica e o Vladimir explicam de forma simples o conceito de inflação. Abordam por que razão os preços sobem com o passar do tempo e como isso afeta o poder de compra das famílias. Uma explicação clara e acessível sobre a razão do dinheiro valer menos quando a inflação sobe.",
     imagem: "images/img_11.jpg",
     audio: "https://pub-c876b1902a0a426d9d354f25c6e000fa.r2.dev/episodio_11.mp3",
     topicos: [
