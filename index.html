@@ -246,5 +246,148 @@
       if (email2) email2.addEventListener('keypress', e => { if (e.key === 'Enter') { e.preventDefault(); handleSubscribeClick('subscribe-email-2', 'subscribe-message-2'); } });
     });
   </script>
+  <!-- Scripts -->
+<script src="episodios.js"></script>
+<script>
+// Configuração
+const episodiosPorPagina = 6;
+let paginaAtual = 1;
+
+// Ordenar episódios por ID descendente (mais recente primeiro)
+const episodiosOrdenados = [...episodios].sort((a, b) => b.id - a.id);
+
+// Elementos do DOM
+const containerEpisodios = document.querySelector('.episodios-grid') || document.querySelector('main');
+const paginacao = document.querySelector('.paginacao');
+
+// Função para renderizar episódios
+function renderizarEpisodios(pagina) {
+    const inicio = (pagina - 1) * episodiosPorPagina;
+    const fim = inicio + episodiosPorPagina;
+    const episodiosPagina = episodiosOrdenados.slice(inicio, fim);
+    
+    // Limpar conteúdo anterior
+    if (containerEpisodios) {
+        containerEpisodios.innerHTML = '';
+    }
+    
+    // Criar cards dos episódios
+    episodiosPagina.forEach((ep, index) => {
+        const isDestaque = pagina === 1 && index === 0; // Primeiro episódio da primeira página é destaque
+        
+        const card = document.createElement('article');
+        card.className = `episodio-card ${isDestaque ? 'destaque' : ''}`;
+        card.innerHTML = `
+            <img src="${ep.imagem}" alt="${ep.titulo}" loading="lazy">
+            <div class="episodio-info">
+                <span class="episodio-data">${ep.data}</span>
+                <h3>${ep.titulo}</h3>
+                <p class="autor">${ep.autor}</p>
+                <p class="duracao">⏱ ${ep.duracao}</p>
+                <p class="descricao">${ep.descricao.substring(0, 150)}...</p>
+                <div class="episodio-actions">
+                    <a href="${ep.audio}" class="btn-play" target="_blank">▶ Ouvir</a>
+                    <a href="episodio.html?id=${ep.id}" class="btn-detalhes">Ver Detalhes</a>
+                </div>
+            </div>
+        `;
+        
+        containerEpisodios.appendChild(card);
+    });
+    
+    // Atualizar paginação
+    atualizarPaginacao();
+}
+
+// Função para atualizar controles de paginação
+function atualizarPaginacao() {
+    const totalPaginas = Math.ceil(episodiosOrdenados.length / episodiosPorPagina);
+    
+    if (paginacao) {
+        paginacao.innerHTML = '';
+        
+        // Botão anterior
+        const btnAnterior = document.createElement('a');
+        btnAnterior.href = '#';
+        btnAnterior.textContent = '<';
+        btnAnterior.className = paginaAtual === 1 ? 'disabled' : '';
+        btnAnterior.onclick = (e) => {
+            e.preventDefault();
+            if (paginaAtual > 1) {
+                paginaAtual--;
+                renderizarEpisodios(paginaAtual);
+                window.scrollTo(0, 0);
+            }
+        };
+        paginacao.appendChild(btnAnterior);
+        
+        // Números das páginas
+        for (let i = 1; i <= totalPaginas; i++) {
+            const btnPagina = document.createElement('a');
+            btnPagina.href = '#';
+            btnPagina.textContent = i;
+            btnPagina.className = i === paginaAtual ? 'ativo' : '';
+            btnPagina.onclick = (e) => {
+                e.preventDefault();
+                paginaAtual = i;
+                renderizarEpisodios(paginaAtual);
+                window.scrollTo(0, 0);
+            };
+            paginacao.appendChild(btnPagina);
+        }
+        
+        // Botão seguinte
+        const btnSeguinte = document.createElement('a');
+        btnSeguinte.href = '#';
+        btnSeguinte.textContent = '>';
+        btnSeguinte.className = paginaAtual === totalPaginas ? 'disabled' : '';
+        btnSeguinte.onclick = (e) => {
+            e.preventDefault();
+            if (paginaAtual < totalPaginas) {
+                paginaAtual++;
+                renderizarEpisodios(paginaAtual);
+                window.scrollTo(0, 0);
+            }
+        };
+        paginacao.appendChild(btnSeguinte);
+    }
+}
+
+// Destaque para o último episódio (primeiro da lista ordenada)
+function destacarUltimoEpisodio() {
+    const destaqueContainer = document.querySelector('.destaque-episodio') || containerEpisodios;
+    const ultimoEpisodio = episodiosOrdenados[0];
+    
+    if (destaqueContainer && paginaAtual === 1) {
+        const destaque = document.createElement('section');
+        destaque.className = 'episodio-destaque';
+        destaque.innerHTML = `
+            <h2>🎙️ Último Episódio</h2>
+            <div class="destaque-content">
+                <img src="${ultimoEpisodio.imagem}" alt="${ultimoEpisodio.titulo}">
+                <div>
+                    <h3>${ultimoEpisodio.titulo}</h3>
+                    <p>${ultimoEpisodio.descricao}</p>
+                    <p><strong>Autor:</strong> ${ultimoEpisodio.autor}</p>
+                    <p><strong>Duração:</strong> ${ultimoEpisodio.duracao}</p>
+                    <a href="${ultimoEpisodio.audio}" class="btn-play-grande" target="_blank">▶ Ouvir Agora</a>
+                </div>
+            </div>
+        `;
+        
+        // Inserir antes dos outros episódios
+        const primeiraLista = document.querySelector('.episodios-grid') || document.querySelector('main');
+        if (primeiraLista) {
+            primeiraLista.insertBefore(destaque, primeiraLista.firstChild);
+        }
+    }
+}
+
+// Inicializar
+document.addEventListener('DOMContentLoaded', () => {
+    renderizarEpisodios(paginaAtual);
+    destacarUltimoEpisodio();
+});
+</script>
   </body>
 </html>
