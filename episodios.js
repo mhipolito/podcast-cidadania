@@ -299,5 +299,260 @@ const episodios = [
             resposta: 2
         }
     ]
+},
+{
+    id: 7,
+    titulo: "Ep. 7 - Porque compramos o que não precisamos?",
+    autor: "Alexei Gangan e Alexander Gamito - 9ºA",
+    data: "Março 2026",
+    duracao: "2:47 minutos",
+    descricao: "Neste episódio, o Alexei e o Alexander exploram as razões por trás das compras por impulso. Analisam como as emoções (tristeza, stress ou até felicidade), as promoções agressivas e a influência das redes sociais nos levam a adquirir produtos de que não precisamos. Depois, partilham estratégias práticas para controlar estes impulsos, como a regra das 24 horas, fazer uma lista de compras e definir limites de gasto, ajudando os ouvintes a desenvolver hábitos financeiros mais conscientes e evitar dificuldades financeiras.",
+    imagem: "images/img_7.jpg",
+    audio: "https://pub-c876b1902a0a426d9d354f25c6e000fa.r2.dev/episodio_7.mp3",
+    topicos: [
+        "O que são compras por impulso",
+        "Emoções e comportamento de compra",
+        "Influência das promoções e FOMO",
+        "Impacto das redes sociais nas decisões de compra",
+        "Estratégias para evitar compras desnecessárias"
+    ],
+    participantes: ["Alexei Gangan e Alexander Gamito"],
+    infoExtra: "Sabias que... Estudos mostram que esperar 24 horas antes de fazer uma compra não planeada pode reduzir significativamente as compras por impulso. Além disso, fazer uma lista de compras e definir um orçamento prévio ajuda a manter o foco nas necessidades reais, evitando gastos desnecessários que podem comprometer o equilíbrio financeiro mensal.",
+    quiz: [
+        {
+            pergunta: "Qual é uma das principais razões que nos levam a fazer compras por impulso?",
+            opcoes: [
+                "Planeamento financeiro rigoroso",
+                "Emoções como tristeza ou stress",
+                "Ter uma lista de compras definida",
+                "Esperar 24 horas antes de comprar"
+            ],
+            resposta: 1
+        },
+        {
+            pergunta: "O que significa FOMO no contexto das compras?",
+            opcoes: [
+                "Fear Of Missing Out - medo de perder uma oportunidade",
+                "Financial Organization and Management Option",
+                "First Offer Maximum Offer",
+                "Free Online Shopping Method"
+            ],
+            resposta: 0
+        },
+        {
+            pergunta: "Qual é a 'dica de ouro' sugerida para evitar compras por impulso?",
+            opcoes: [
+                "Comprar imediatamente quando vês uma promoção",
+                "Seguir todas as tendências das redes sociais",
+                "Esperar pelo menos 24 horas antes de comprar",
+                "Ignorar completamente o orçamento"
+            ],
+            resposta: 2
+        }
+    ]
+},
+{
+    id: 8,
+    titulo: "Ep. 8 - O que é o Banco de Portugal?",
+    autor: "Lucas Alambre - 9ºA",
+    data: "Março 2026",
+    duracao: "1:30 minutos",
+    descricao: "Neste episódio, o Lucas explica o papel do Banco de Portugal e do Banco Central Europeu no sistema financeiro. Uma explicação clara e acessível sobre como estas instituições trabalham em conjunto para garantir a estabilidade económica.",
+    imagem: "images/img_8.jpg",
+    audio: "https://pub-c876b1902a0a426d9d354f25c6e000fa.r2.dev/episodio_8.mp3",
+    topicos: [
+        "O que é o Banco de Portugal",
+        "Funções do Banco Central Europeu",
+        "Diferenças entre Banco de Portugal e BCE",
+        "Controlo da inflação e taxas de juro",
+        "Supervisão do sistema financeiro português"
+    ],
+    participantes: ["Lucas Alambre"],
+    infoExtra: "Sabias que... O Banco de Portugal foi fundado em 1846 e integra o Sistema Europeu de Bancos Centrais desde 1998. Enquanto o Banco Central Europeu, sediado em Frankfurt, define as taxas de juro para toda a zona Euro, o Banco de Portugal supervisiona as instituições financeiras nacionais e protege os direitos dos consumidores financeiros em Portugal.",
+    quiz: [
+        {
+            pergunta: "Qual é a principal função do Banco Central Europeu?",
+            opcoes: [
+                "Supervisionar apenas os bancos portugueses",
+                "Manter a estabilidade dos preços e controlar a inflação",
+                "Gerir contas bancárias pessoais",
+                "Definir impostos nacionais"
+            ],
+            resposta: 1
+        },
+        {
+            pergunta: "O que faz o Banco de Portugal?",
+            opcoes: [
+                "Define a política monetária para toda a Europa",
+                "Aplica as decisões do BCE em Portugal e supervisiona bancos nacionais",
+                "Emite moeda de outros países",
+                "Controla apenas o comércio internacional"
+            ],
+            resposta: 1
+        },
+        {
+            pergunta: "Qual é a principal diferença entre o Banco de Portugal e o Banco Central Europeu?",
+            opcoes: [
+                "Não há diferença, são o mesmo banco",
+                "O BCE decide para a zona Euro, o Banco de Portugal aplica a nível nacional",
+                "O Banco de Portugal é mais importante que o BCE",
+                "O BCE só trabalha com bancos privados"
+            ],
+            resposta: 1
+        }
+    ]
+},
+{
+    id: 9,
+    titulo: "Ep. 9 - Perdi ou ganhei dinheiro com a inflação?",
+    autor: "Shubham Silwal e Tomás Jesus - 9ºA",
+    data: "Março 2026",
+    duracao: "2:40 minutos",
+    descricao: "Neste episódio, o Shubham e o Tomás explicam a diferença crucial entre juros nominais e juros reais. Usando um exemplo prático com pizzas, demonstram como a inflação pode reduzir o poder de compra mesmo quando o saldo bancário aumenta. Se o banco paga 2% de juros mas a inflação é de 3%, na realidade estás a perder 1% do teu poder de compra. Os apresentadores partilham a 'dica de ouro': comparar sempre a taxa de juros com a taxa de inflação para saber se o teu dinheiro está realmente a crescer ou a perder valor.",
+    imagem: "images/img_9.jpg",
+    audio: "https://pub-c876b1902a0a426d9d354f25c6e000fa.r2.dev/episodio_9.mp3",
+    topicos: [
+        "Diferença entre juros nominais e juros reais",
+        "Como a inflação afeta o poder de compra",
+        "Exemplo prático: 100€ e o preço das pizzas",
+        "Como calcular se estás a ganhar ou perder dinheiro",
+        "Estratégias para proteger as poupanças da inflação"
+    ],
+    participantes: ["Shubham Silwal e Tomás Jesus"],
+    infoExtra: "Sabias que... A taxa de juro real é calculada subtraindo a taxa de inflação à taxa de juro nominal. Se o teu depósito rende 2% ao ano mas a inflação é de 3%, a tua taxa real é de -1%. Isto significa que, apesar de teres mais euros na conta, consegues comprar menos bens e serviços do que no ano anterior.",
+    quiz: [
+        {
+            pergunta: "Se o banco paga 2% de juros e a inflação é de 3%, o que acontece ao teu poder de compra?",
+            opcoes: [
+                "Aumenta 5%",
+                "Mantém-se igual",
+                "Diminui 1%",
+                "Aumenta 1%"
+            ],
+            resposta: 2
+        },
+        {
+            pergunta: "O que representa o 'valor real' do dinheiro?",
+            opcoes: [
+                "O número exato que aparece no extrato bancário",
+                "A quantidade de bens e serviços que o dinheiro consegue comprar",
+                "O valor das moedas e notas em euros",
+                "O montante total de juros recebidos"
+            ],
+            resposta: 1
+        },
+        {
+            pergunta: "Qual é a 'dica de ouro' para avaliar se uma poupança vale a pena?",
+            opcoes: [
+                "Olhar apenas para a taxa de juro oferecida pelo banco",
+                "Comparar a taxa de juro com a taxa de inflação",
+                "Guardar o dinheiro em casa para não perder valor",
+                "Investir tudo em ações sem pesquisar"
+            ],
+            resposta: 1
+        }
+    ]
+},
+{
+    id: 10,
+    titulo: "Ep. 10 - Para que serve ter uma conta no Banco?",
+    autor: "Vitória Brioso, Lara Abreu e Eva Oliveira - 9ºA",
+    data: "Março 2026",
+    duracao: "3:20 minutos",
+    descricao: "Neste episódio, a Vitória, a Lara e a Eva explicam a importância de ter uma conta bancária no dia-a-dia. Abordam as vantagens como segurança contra roubos, organização financeira através de extratos e facilidade nos pagamentos e recebimentos. Discutem também os custos associados, como comissões de manutenção, e apresentam a solução da Conta de Serviços Mínimos Bancários para garantir acesso essencial a custo reduzido.",
+    imagem: "images/img_10.jpg",
+    audio: "https://pub-c876b1902a0a426d9d354f25c6e000fa.r2.dev/episodio_10.mp3",
+    topicos: [
+        "Vantagens de ter uma conta bancária",
+        "Segurança do dinheiro no banco vs. em casa",
+        "Organização financeira e extratos",
+        "Serviços essenciais (MB Way, transferências)",
+        "Conta de Serviços Mínimos Bancários"
+    ],
+    participantes: ["Vitória Brioso, Lara Abreu e Eva Oliveira"],
+    infoExtra: "Sabias que... Em Portugal, a Conta de Serviços Mínimos Bancários é um direito de todos os clientes e inclui serviços como a emissão de cartão de débito, realização de levantamentos e pagamentos de serviços essenciais a um custo mensal máximo definido por lei, promovendo a inclusão financeira.",
+    quiz: [
+        {
+            pergunta: "Qual é uma das principais vantagens de ter dinheiro no banco em vez de em casa?",
+            opcoes: [
+                "O dinheiro rende mais automaticamente",
+                "Está protegido contra roubos, perdas ou danos",
+                "Podes gastar sem limite",
+                "O banco paga-te para guardar o dinheiro"
+            ],
+            resposta: 1
+        },
+        {
+            pergunta: "O que é a Conta de Serviços Mínimos Bancários?",
+            opcoes: [
+                "Uma conta apenas para milionários",
+                "Uma conta que garante acesso a serviços essenciais a custo reduzido",
+                "Uma conta sem cartão de débito",
+                "Uma conta apenas para empresas"
+            ],
+            resposta: 1
+        },
+        {
+            pergunta: "Qual é a 'dica de ouro' antes de abrir uma conta bancária?",
+            opcoes: [
+                "Escolher o banco com o edifício mais bonito",
+                "Verificar as comissões mensais e serviços incluídos",
+                "Abrir conta em todos os bancos",
+                "Ignorar os custos de manutenção"
+            ],
+            resposta: 1
+        }
+    ]
+},
+{
+    id: 11,
+    titulo: "Ep. 11 - O que é a inflação?",
+    autor: "Érica Barreto e Vladimir Jones - 9ºB",
+    data: "Março 2026",
+    duracao: "2:05 minutos",
+    descricao: "Neste episódio, a Érica e o Vladimir explicam de forma simples o conceito de inflação. Abordam por que razão os preços sobem com o passar do tempo e como isso afeta o poder de compra das famílias. Discutem as principais causas da inflação, como o excesso de procura, o aumento dos custos de produção e as expectativas de preços futuros. Uma explicação clara e acessível sobre por que o dinheiro vale menos quando a inflação sobe.",
+    imagem: "images/img_11.jpg",
+    audio: "https://pub-c876b1902a0a426d9d354f25c6e000fa.r2.dev/episodio_11.mp3",
+    topicos: [
+        "O que é a inflação",
+        "Por que os preços sobem com o tempo",
+        "Diferença entre inflação e aumento de preço isolado",
+        "Causas da inflação (procura, custos, expectativas)",
+        "Impacto da inflação no poder de compra"
+    ],
+    participantes: ["Érica Barreto e Vladimir Jones"],
+    infoExtra: "Sabias que... A inflação não é apenas um produto que fica mais caro, mas sim o aumento generalizado de preços de muitos bens e serviços ao mesmo tempo (comida, transporte, roupas, energia). Quando há muita procura e poucos produtos disponíveis, ou quando fica mais caro produzir e transportar mercadorias, os preços tendem a subir, reduzindo o poder de compra do dinheiro.",
+    quiz: [
+        {
+            pergunta: "O que é a inflação?",
+            opcoes: [
+                "Quando apenas um produto fica mais caro",
+                "Quando muitos preços sobem ao mesmo tempo com o passar do tempo",
+                "Quando os salários aumentam",
+                "Quando o banco fecha"
+            ],
+            resposta: 1
+        },
+        {
+            pergunta: "Qual é uma das causas da inflação?",
+            opcoes: [
+                "Muita gente quer comprar e não há produtos suficientes",
+                "Todos os produtos estão em promoção",
+                "O dinheiro vale mais",
+                "Os bancos fecham"
+            ],
+            resposta: 0
+        },
+        {
+            pergunta: "O que acontece ao poder de compra quando há inflação?",
+            opcoes: [
+                "O dinheiro compra mais coisas",
+                "O dinheiro compra a mesma quantidade de coisas",
+                "O dinheiro compra menos coisas",
+                "O dinheiro desaparece"
+            ],
+            resposta: 2
+        }
+    ]
 }
 ];
