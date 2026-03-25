@@ -68,12 +68,15 @@
         }
 
         /* Episode Destaque */
+        #destaque-container {
+            margin-bottom: 3rem;
+        }
+
         .episodio-destaque {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 2rem;
             border-radius: 15px;
-            margin-bottom: 3rem;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
 
@@ -121,8 +124,15 @@
             transform: scale(1.05);
         }
 
+        /* Títulos de Secção */
+        .section-title {
+            color: #333;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
         /* Episodios Grid */
-        .episodios-grid {
+        #episodios-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
@@ -220,7 +230,7 @@
         }
 
         /* Paginação */
-        .paginacao {
+        #paginacao-container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -229,27 +239,29 @@
             flex-wrap: wrap;
         }
 
-        .paginacao a {
+        #paginacao-container a {
             padding: 0.75rem 1.25rem;
             background: #667eea;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s;
+            cursor: pointer;
         }
 
-        .paginacao a:hover {
+        #paginacao-container a:hover {
             background: #5568d3;
         }
 
-        .paginacao a.ativo {
+        #paginacao-container a.ativo {
             background: #764ba2;
             font-weight: bold;
         }
 
-        .paginacao a.disabled {
+        #paginacao-container a.disabled {
             background: #ccc;
             pointer-events: none;
+            cursor: not-allowed;
         }
 
         /* Newsletter */
@@ -326,7 +338,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .episodios-grid {
+            #episodios-container {
                 grid-template-columns: 1fr;
             }
 
@@ -335,12 +347,13 @@
             }
         }
 
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 3rem;
-            font-size: 1.2rem;
-            color: #666;
+        /* Debug - remover em produção */
+        .debug-info {
+            background: #ffeb3b;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -362,17 +375,20 @@
 
     <!-- Main Content -->
     <main>
+        <!-- Debug Info -->
+        <div id="debug-info" class="debug-info"></div>
+
         <!-- Episode Destaque (último episódio) -->
         <section id="destaque-container"></section>
 
         <!-- Lista de Episódios -->
-        <h2 style="margin-bottom: 2rem; color: #333;">Últimos Podcasts</h2>
-        <section id="episodios-container" class="episodios-grid">
-            <div class="loading">Carregando episódios...</div>
+        <h2 class="section-title">Últimos Podcasts</h2>
+        <section id="episodios-container">
+            <p style="text-align: center; padding: 2rem; color: #666;">Carregando episódios...</p>
         </section>
 
         <!-- Paginação -->
-        <nav id="paginacao-container" class="paginacao"></nav>
+        <nav id="paginacao-container"></nav>
 
         <!-- Newsletter -->
         <section class="newsletter">
@@ -393,27 +409,58 @@
     <!-- Scripts -->
     <script src="episodios.js"></script>
     <script>
+        // Debug: Verificar se episodios.js carregou
+        console.log('=== INÍCIO DO SCRIPT ===');
+        console.log('Array episodios existe?', typeof episodios !== 'undefined');
+        console.log('Número de episódios:', episodios ? episodios.length : 0);
+
         // Configuração
-        const episodiosPorPagina = 6;
+        const episodiosPorPagina = 5; // 5 episódios por página (exclui destaque)
         let paginaAtual = 1;
 
         // Ordenar episódios por ID descendente (mais recente primeiro)
         const episodiosOrdenados = [...episodios].sort((a, b) => b.id - a.id);
 
+        console.log('Episódios ordenados:', episodiosOrdenados.map(e => e.id));
+
         // Elementos do DOM
         const containerDestaque = document.getElementById('destaque-container');
         const containerEpisodios = document.getElementById('episodios-container');
         const containerPaginacao = document.getElementById('paginacao-container');
+        const debugInfo = document.getElementById('debug-info');
+
+        console.log('Containers encontrados:', {
+            destaque: !!containerDestaque,
+            episodios: !!containerEpisodios,
+            paginacao: !!containerPaginacao
+        });
+
+        // Atualizar debug info
+        function atualizarDebug() {
+            const totalPaginas = Math.ceil((episodiosOrdenados.length - 1) / episodiosPorPagina);
+            debugInfo.innerHTML = `
+                <strong>Debug:</strong> Total episódios: ${episodiosOrdenados.length} | 
+                Página atual: ${paginaAtual} | 
+                Total páginas: ${totalPaginas} | 
+                Episódios por página: ${episodiosPorPagina}
+            `;
+        }
 
         // Função para renderizar o episódio em destaque
         function renderizarDestaque() {
+            console.log('Renderizar destaque...');
             const ultimoEpisodio = episodiosOrdenados[0]; // Episódio 11
             
+            if (!containerDestaque) {
+                console.error('Container destaque não encontrado!');
+                return;
+            }
+
             containerDestaque.innerHTML = `
                 <section class="episodio-destaque">
                     <h2>🎙️ Último Episódio</h2>
                     <div class="destaque-content">
-                        <img src="${ultimoEpisodio.imagem}" alt="${ultimoEpisodio.titulo}" onerror="this.src='https://via.placeholder.com/300x300?text=Podcast'">
+                        <img src="${ultimoEpisodio.imagem}" alt="${ultimoEpisodio.titulo}" onerror="this.src='https://via.placeholder.com/300x300?text=Episodio+${ultimoEpisodio.id}'">
                         <div class="destaque-info">
                             <h3>${ultimoEpisodio.titulo}</h3>
                             <p><strong>Autor:</strong> ${ultimoEpisodio.autor}</p>
@@ -425,14 +472,26 @@
                     </div>
                 </section>
             `;
+            console.log('Destaque renderizado:', ultimoEpisodio.id);
         }
 
         // Função para renderizar episódios
         function renderizarEpisodios(pagina) {
-            const inicio = (pagina - 1) * episodiosPorPagina;
+            console.log('Renderizar página:', pagina);
+            
+            // Página 1: episódios 10, 9, 8, 7, 6 (índices 1-5)
+            // Página 2: episódios 5, 4, 3, 2, 1 (índices 6-10)
+            const inicio = (pagina - 1) * episodiosPorPagina + 1; // +1 para pular o destaque
             const fim = inicio + episodiosPorPagina;
             const episodiosPagina = episodiosOrdenados.slice(inicio, fim);
             
+            console.log('Episódios da página:', episodiosPagina.map(e => e.id));
+
+            if (!containerEpisodios) {
+                console.error('Container episódios não encontrado!');
+                return;
+            }
+
             // Limpar conteúdo anterior
             containerEpisodios.innerHTML = '';
             
@@ -458,23 +517,36 @@
                 containerEpisodios.appendChild(card);
             });
             
+            console.log('Cards criados:', episodiosPagina.length);
+            
             // Atualizar paginação
             atualizarPaginacao();
+            atualizarDebug();
         }
 
         // Função para atualizar controles de paginação
         function atualizarPaginacao() {
-            const totalPaginas = Math.ceil(episodiosOrdenados.length / episodiosPorPagina);
+            // Total de páginas (exclui o episódio de destaque)
+            const totalEpisodiosParaLista = episodiosOrdenados.length - 1;
+            const totalPaginas = Math.ceil(totalEpisodiosParaLista / episodiosPorPagina);
             
+            console.log('Atualizar paginação:', { totalPaginas, paginaAtual });
+
+            if (!containerPaginacao) {
+                console.error('Container paginação não encontrado!');
+                return;
+            }
+
             containerPaginacao.innerHTML = '';
             
             // Botão anterior
             const btnAnterior = document.createElement('a');
             btnAnterior.href = '#';
-            btnAnterior.textContent = '<';
+            btnAnterior.textContent = '❮ Anterior';
             btnAnterior.className = paginaAtual === 1 ? 'disabled' : '';
             btnAnterior.onclick = (e) => {
                 e.preventDefault();
+                console.log('Clique anterior, página atual:', paginaAtual);
                 if (paginaAtual > 1) {
                     paginaAtual--;
                     renderizarEpisodios(paginaAtual);
@@ -491,6 +563,7 @@
                 btnPagina.className = i === paginaAtual ? 'ativo' : '';
                 btnPagina.onclick = (e) => {
                     e.preventDefault();
+                    console.log('Clique página:', i);
                     paginaAtual = i;
                     renderizarEpisodios(paginaAtual);
                     window.scrollTo(0, 0);
@@ -501,10 +574,11 @@
             // Botão seguinte
             const btnSeguinte = document.createElement('a');
             btnSeguinte.href = '#';
-            btnSeguinte.textContent = '>';
+            btnSeguinte.textContent = 'Seguinte ❯';
             btnSeguinte.className = paginaAtual === totalPaginas ? 'disabled' : '';
             btnSeguinte.onclick = (e) => {
                 e.preventDefault();
+                console.log('Clique seguinte, página atual:', paginaAtual);
                 if (paginaAtual < totalPaginas) {
                     paginaAtual++;
                     renderizarEpisodios(paginaAtual);
@@ -512,13 +586,27 @@
                 }
             };
             containerPaginacao.appendChild(btnSeguinte);
+
+            console.log('Paginação atualizada');
         }
 
         // Inicializar quando o DOM estiver pronto
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('=== DOM CARREGADO ===');
+            console.log('Episódios disponíveis:', episodios.length);
+            
             renderizarDestaque();
             renderizarEpisodios(paginaAtual);
+            
+            console.log('=== INICIALIZAÇÃO COMPLETA ===');
         });
+
+        // Fallback se DOM já estiver carregado
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            console.log('DOM já carregado, executar imediatamente');
+            renderizarDestaque();
+            renderizarEpisodios(paginaAtual);
+        }
     </script>
 </body>
 </html>
